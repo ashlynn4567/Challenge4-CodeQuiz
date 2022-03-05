@@ -1,6 +1,6 @@
 # Code Quiz
 
-## Do you have what it takes to be a web developer?
+### Do you have what it takes to be a web developer?
 
 This is my fourth challenge assignment for the University of Oregon Coding Bootcamp 2022. The challenge is to create an application using JavaScript and Web APIs that will give a timed code quiz to the user, removing time off the clock if a question is answered incorrectly.
 
@@ -27,9 +27,9 @@ This is how the main page appears to users. The page is responsive, adapting to 
 
 <p align="center"><img src=""/></p>
 
-## Are you ready?
+## Deployed Site
 
-<a href="">Test your skills in our Code Quiz!<a>
+<a href="">Test your skills in the Code Quiz!<a>
 
 ## Suggestion Box
 
