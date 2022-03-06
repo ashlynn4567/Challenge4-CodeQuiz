@@ -61,8 +61,8 @@ var startQuiz = function() {
         questionChoicesEl.appendChild(answerButton);
     };
 
-    // increase question number
-    questionNumber++
+    // // increase question number
+    // questionNumber++
 };
 
 var endQuiz = function() {
