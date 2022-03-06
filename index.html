@@ -30,7 +30,7 @@
     <!--End Navbar-->
 
     <!--Intro Section-->
-    <div class="intro">
+    <div id="intro">
       <h1>Welcome to the Code Quiz.</h1>
       <p>
         Click the button below to start. Once the quiz begins, you will be given
@@ -45,16 +45,16 @@
     <!--End Intro Section-->
 
     <!--Question Section-->
-    <div id="questions" class="hidden">
+    <div id="questions">
       <h2 id="question-prompt"></h2>
       <div id="question-choices" class="choices"></div>
     </div>
 
-    <div id="answer-outcome" class="feedback hide"></div>
+    <div id="answer-outcome" class="feedback"></div>
     <!--End Question Section-->
 
     <!--High Score Section-->
-    <div id="score=input" class="hidden">
+    <div id="score=input" style="display: none">
       <h2>You have completed the Code Quiz!</h2>
       <p>
         Your final score is: <span id="user-final-score"></span>.
