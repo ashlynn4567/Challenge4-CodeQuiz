@@ -24,17 +24,17 @@ questionList = [
     {
         question: "Question 1",
         choices: ["Answer 1", "Answer 2", "Answer 3"],
-        Answer: "Answer 1"
+        answer: "Answer 1"
     },
     {
         question: "Question 2",
         choices: ["Answer 1", "Answer 2", "Answer 3"],
-        Answer: "Answer 2"
+        answer: "Answer 2"
     },
     {
         question: "Question 3",
         choices: ["Answer 1", "Answer 2", "Answer 3"],
-        Answer: "Answer 3"
+        answer: "Answer 3"
     }
 ];
 // END VARIABLE SECTION------------------------------------------------------------------------------------------------- //
@@ -46,6 +46,9 @@ questionList = [
 var startQuiz = function() {
     // hide the intro
     introEl.style.display = "none";
+
+    // // begin timing functions
+    // timer();
 
     // begin displaying the questions
     runQuizQuestions();
@@ -66,41 +69,53 @@ var runQuizQuestions = function() {
     questionPromptEl.innerText = questionList[questionNumber].question;
 
     // clear previous question choices
+    questionChoicesEl.innerHTML = "";
 
     // loop through question array
     for (i = 0; i < questionList[questionNumber].choices.length; i++) {
         // create element for list item
-        var answerButton = document.createElement("button");
+        var answerButtonEl = document.createElement("button");
         
         // give button styling class
-        answerButton.setAttribute("class", "btn btn-block col-4 btn-outline-info");
+        answerButtonEl.setAttribute("class", "btn btn-block col-4 btn-outline-info");
         
         // set list item element content
-        answerButton.innerText = questionList[questionNumber].choices[i];
+        answerButtonEl.innerText = questionList[questionNumber].choices[i];
 
         // append list item element to div parent
-        questionChoicesEl.appendChild(answerButton);
-
-        // click event listener on each answer choice
-        // onclick run getUserAnswer();
+        questionChoicesEl.appendChild(answerButtonEl);        
     };
+    
+    // identify clicked answer as user's answer
+
+    // click event listener on each answer choice
+    answerButtonEl.addEventListener("click", getUserAnswer);
 };
 
-var getUserAnswer = function() {
-    // check if answer is wrong
-        // if wrong
-            // subtract time from timer
+var getUserAnswer = function(answerButtonEl) {
+    console.log("clicked");
+    
+    // check if answer is right or wrong
+    // if right
+    if (answerButtonEl.innerText === questionList[questionNumber].answer) {
+        // tell user their answer was correct
+        console.log("correct");
+
+        // reward points for correct answer
+    
+    // if wrong
+    } else {
+        // tell user their answer was wrong
+        console.log("incorrect");
         
-            // display updated time
+        // subtract time from timer
+    
+        // display updated time
 
-            // tell user their answer was wrong
-
-        // if right
-            // tell user their answer was correct
-
-            // reward points for correct answer
+    };
 
     // increase question number
+    // questionNumber++;
 
     // if question array is not complete, run next question 
         // runQuizQuestions();
@@ -123,8 +138,7 @@ var endQuiz = function() {
 // function to run all the quiz functions
 var quizHandler = function() {
     startQuiz();
-    timer();
-    endQuiz();
+    // endQuiz();
 };
 // -----------------------------------------------------------------------------------------------------END QUIZ SECTION //
 
