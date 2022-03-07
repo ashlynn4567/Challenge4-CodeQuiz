@@ -14,8 +14,12 @@
 var startBtn = document.querySelector("#start");
 var questionPromptEl = document.querySelector("#question-prompt");
 var introEl = document.querySelector("#intro");
-var questionNumber = 0;
 var questionChoicesEl = document.querySelector("#question-choices");
+
+// Counter variables
+var questionNumber = 0;
+var answerCounter = 1;
+var numberCorrect = 0;
 
 // timer related variables
 
@@ -62,19 +66,24 @@ var timer = function() {
     // countdown time 
 
     // condition to end quiz if user runs out of time
+    // how do i constantly check this condition??????????????????????
 };
 
 var runQuizQuestions = function() {
     // setting inner text of h2 element to be question number
     questionPromptEl.innerText = questionList[questionNumber].question;
 
-    // clear previous question choices
+    // clear previous answer choices
     questionChoicesEl.innerHTML = "";
+    answerCounter = 1;
 
     // loop through question array
     for (i = 0; i < questionList[questionNumber].choices.length; i++) {
         // create element for list item
         var answerButtonEl = document.createElement("button");
+
+        // give button id to track which answer is which
+        answerButtonEl.setAttribute("id", answerCounter);
         
         // give button styling class
         answerButtonEl.setAttribute("class", "btn btn-block col-4 btn-outline-info");
@@ -83,18 +92,20 @@ var runQuizQuestions = function() {
         answerButtonEl.innerText = questionList[questionNumber].choices[i];
 
         // append list item element to div parent
-        questionChoicesEl.appendChild(answerButtonEl);        
+        questionChoicesEl.appendChild(answerButtonEl);
+        
+        // increase answerCounter by 1
+        answerCounter++
     };
     
-    // identify clicked answer as user's answer
-
-    // click event listener on each answer choice
-    answerButtonEl.addEventListener("click", getUserAnswer);
+    answerButtonEl.onclick = getUserAnswer();
 };
 
 var getUserAnswer = function(answerButtonEl) {
     console.log("clicked");
-    
+
+    var blah = document.getElementById(answerCounter)
+
     // check if answer is right or wrong
     // if right
     if (answerButtonEl.innerText === questionList[questionNumber].answer) {
@@ -102,6 +113,7 @@ var getUserAnswer = function(answerButtonEl) {
         console.log("correct");
 
         // reward points for correct answer
+        numberCorrect += 1;
     
     // if wrong
     } else {
