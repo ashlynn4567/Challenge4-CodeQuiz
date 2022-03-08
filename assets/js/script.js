@@ -13,10 +13,9 @@
 //                                        3. test js to make sure score saving works properly
 //                                        4. fill out readme
 //                                        5. create readme screenshots and gifs
-//                                        6. add coding questions to placeholders in script.js
-//                                        7. decide whether to make a new js file or use current for scorescreen
-//                                        8. add scorescreen js
-//                                        9. make questions pause on screen too rather than just feedback
+//                                        6. decide whether to make a new js file or use current for scorescreen
+//                                        7. add scorescreen js
+//                                        8. make questions pause on screen too rather than just feedback
 //
 
 
@@ -51,17 +50,17 @@ questionList = [
         answer: "<script></script>"
     },
     {
-        question: "Which of the choices below is the correct syntax for a function declaration in JavaScript?",
+        question: "Which of the choices below is the correct syntax for a function declaration?",
         choices: ["function myFunction() {};", "function = myFunction() {};", "function:myFunction();", "var myFunction = function() {};"],
         answer: "function myFunction() {};"
     },
     {
-        question: "Which of the choices below is the correct syntax for a function expression in JavaScript?",
+        question: "Which of the choices below is the correct syntax for a function expression?",
         choices: ["function myFunction() {};", "function = myFunction() {};", "function:myFunction();", "var myFunction = function() {};"],
         answer: "var myFunction = function() {};"
     },
     {
-        question: "Which of the choices below is the correct syntax for a conditional statement in JavaScript?",
+        question: "Which of the choices below is the correct syntax for a conditional statement?",
         choices: ["if i == 5 then", "for (i = 0; i < 5, i++) {};", "while n <3 {};"],
         answer: "for (i = 0; i < 5, i++) {};"
     },
@@ -74,49 +73,51 @@ questionList = [
         question: "Which of the following notations would represent a comment in JavaScript?",
         choices: ["<!--This is a comment-->", "// This is a comment", "#This is a comment"],
         answer: "// This is a comment"
-    }, {
-        question: "How would you insert a multi-line comment in JavaScript",
-        choices: ["// This comment has more than one line//", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
-    }, {
-        question: "What operator does this represent? ||",
-        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
     }, 
     {
-        question: "What operator does this represent? ||",
-        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
+        question: "What is the correct way to write an array?",
+        choices: ['var colors = "red", "green", "blue"', 'var colors = (1: "red", 2: "green", 3: "blue")', 'var colors = ["red", "green", "blue"]', 'var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")'],
+        answer: 'var colors = ["red", "green", "blue"]'
     }, 
     {
-        question: "What operator does this represent? ||",
-        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
+        question: "True or False: JavaScript is the same as Java.",
+        choices: ["True", "False"],
+        answer: "False"
     }, 
     {
-        question: "What operator does this represent? ||",
-        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
+        question: "Which event occurs when the user clicks on an HTML element?",
+        choices: ["onmouseclick", "onclick", "onchange", "onmouseover"],
+        answer: "onclick"
     }, 
     {
-        question: "What operator does this represent? ||",
-        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
+        question: "How do you declare a variable?",
+        choices: ["v carName;", "var carName;", "variable carName;"],
+        answer: "var carName;"
     }, 
     {
-        question: "What operator does this represent? ||",
-        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
+        question: "Which operator is used to assign a value to a variable?",
+        choices: ["==", "===", "="],
+        answer: "="
     }, 
     {
-        question: "What operator does this represent? ||",
-        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
+        question: "What will the following code return: Boolean(10 > 9);",
+        choices: ["NaN", "null", "True", "False"],
+        answer: "True"
     }, 
     {
-        question: "What operator does this represent? ||",
-        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
+        question: "Is JavaScript case-sensitive?",
+        choices: ["Yes", "No"],
+        answer: "Yes"
+    }, 
+    {
+        question: "What is the correct file extension for JavaScript",
+        choices: [".js", ".javascript", ".java"],
+        answer: ".js"
+    }, 
+    {
+        question: "A function associated with an object is called a:",
+        choices: ["Callback Function", "Link", "Method"],
+        answer: "Method"
     }
 ];
 // END VARIABLE SECTION------------------------------------------------------------------------------------------------- //
