@@ -40,7 +40,6 @@ In the future, I would like to add the following improvements:
 - Add a page that displays what the user answered vs the correct answers for each question. 
 - Add a functionality that allows users to add their own questions. 
 - Add a functionality that randomizes the question order.
-- [lorem ipsum]
 
 I'm a big believer in always refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach me at the following links.
 
