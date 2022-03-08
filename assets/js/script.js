@@ -6,7 +6,18 @@
 // ---------------------------------------------------------------------------------------------4. CLICK EVENT LISTENERS //
 // --------------------------------------------------------------------------------------------------------------------- //
 
-
+// TO DO ==============================>
+//
+//                                        1. fill out scorescreen.html
+//                                        2. use bootstrap to customize style for both hmtl pages
+//                                        3. test js to make sure score saving works properly
+//                                        4. fill out readme
+//                                        5. create readme screenshots and gifs
+//                                        6. add coding questions to placeholders in script.js
+//                                        7. decide whether to make a new js file or use current for scorescreen
+//                                        8. add scorescreen js
+//                                        9. make questions pause on screen too rather than just feedback
+//
 
 
 // 1. DEFINING VARIABLES------------------------------------------------------------------------------------------------ //
@@ -35,19 +46,77 @@ var timer;
 // question array
 questionList = [
     {
-        question: "Question 1",
-        choices: ["Answer 1", "Answer 2", "Answer 3"],
-        answer: "Answer 1"
+        question: "In which HTML element do we put our JavaScript code?",
+        choices: ["<html></html>", "<body></body>", "<script></script>", "<meta></meta>"],
+        answer: "<script></script>"
     },
     {
-        question: "Question 2",
-        choices: ["Answer 1", "Answer 2", "Answer 3"],
-        answer: "Answer 2"
+        question: "Which of the choices below is the correct syntax for a function declaration in JavaScript?",
+        choices: ["function myFunction() {};", "function = myFunction() {};", "function:myFunction();", "var myFunction = function() {};"],
+        answer: "function myFunction() {};"
     },
     {
-        question: "Question 3",
-        choices: ["Answer 1", "Answer 2", "Answer 3"],
-        answer: "Answer 3"
+        question: "Which of the choices below is the correct syntax for a function expression in JavaScript?",
+        choices: ["function myFunction() {};", "function = myFunction() {};", "function:myFunction();", "var myFunction = function() {};"],
+        answer: "var myFunction = function() {};"
+    },
+    {
+        question: "Which of the choices below is the correct syntax for a conditional statement in JavaScript?",
+        choices: ["if i == 5 then", "for (i = 0; i < 5, i++) {};", "while n <3 {};"],
+        answer: "for (i = 0; i < 5, i++) {};"
+    },
+    {
+        question: "What operator does this represent? ||",
+        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
+    }, 
+    {
+        question: "Which of the following notations would represent a comment in JavaScript?",
+        choices: ["<!--This is a comment-->", "// This is a comment", "#This is a comment"],
+        answer: "// This is a comment"
+    }, {
+        question: "How would you insert a multi-line comment in JavaScript",
+        choices: ["// This comment has more than one line//", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
+    }, {
+        question: "What operator does this represent? ||",
+        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
+    }, 
+    {
+        question: "What operator does this represent? ||",
+        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
+    }, 
+    {
+        question: "What operator does this represent? ||",
+        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
+    }, 
+    {
+        question: "What operator does this represent? ||",
+        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
+    }, 
+    {
+        question: "What operator does this represent? ||",
+        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
+    }, 
+    {
+        question: "What operator does this represent? ||",
+        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
+    }, 
+    {
+        question: "What operator does this represent? ||",
+        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
+    }, 
+    {
+        question: "What operator does this represent? ||",
+        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+        answer: "OR"
     }
 ];
 // END VARIABLE SECTION------------------------------------------------------------------------------------------------- //
@@ -178,9 +247,6 @@ var endQuiz = function() {
         // display final score
         userFinalScoreEl.textContent = numberCorrect * time;
     }, 1000);
-
-    // display high score page
-
 };
 // -----------------------------------------------------------------------------------------------------END QUIZ SECTION //
 
