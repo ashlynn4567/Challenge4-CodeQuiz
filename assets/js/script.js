@@ -11,10 +11,9 @@
 //                                        1. fill out scorescreen.html
 //                                        2. use bootstrap to customize style for both hmtl pages
 //                                        3. test js to make sure score saving works properly
-//                                        4. fill out readme
-//                                        5. create readme screenshots and gifs
-//                                        6. decide whether to make a new js file or use current for scorescreen
-//                                        7. add scorescreen js
+//                                        4. create readme screenshots and gifs
+//                                        5. decide whether to make a new js file or use current for scorescreen
+//                                        6. add scorescreen js
 //
 
 
