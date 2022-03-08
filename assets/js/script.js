@@ -18,7 +18,6 @@ var questionChoicesEl = document.querySelector("#question-choices");
 
 // Counter variables
 var questionNumber = 0;
-var answerCounter = 1;
 var numberCorrect = 0;
 
 // timer related variables
@@ -70,45 +69,42 @@ var timer = function() {
 };
 
 var runQuizQuestions = function() {
+    // reset inner text of h2 element 
+    questionPromptEl.innerText = ""
+    
     // setting inner text of h2 element to be question number
     questionPromptEl.innerText = questionList[questionNumber].question;
 
     // clear previous answer choices
     questionChoicesEl.innerHTML = "";
-    answerCounter = 1;
 
     // loop through question array
     for (i = 0; i < questionList[questionNumber].choices.length; i++) {
         // create element for list item
         var answerButtonEl = document.createElement("button");
-
-        // give button id to track which answer is which
-        answerButtonEl.setAttribute("id", answerCounter);
         
         // give button styling class
-        answerButtonEl.setAttribute("class", "btn btn-block col-4 btn-outline-info");
+        answerButtonEl.setAttribute("class", "answer btn btn-block col-4 btn-outline-info");
         
         // set list item element content
         answerButtonEl.innerText = questionList[questionNumber].choices[i];
 
         // append list item element to div parent
         questionChoicesEl.appendChild(answerButtonEl);
-        
-        // increase answerCounter by 1
-        answerCounter++
     };
-    
-    answerButtonEl.onclick = getUserAnswer();
+    // listen for a click on any of the buttons
+    questionChoicesEl.addEventListener("click", checkAnswer);
 };
 
-var getUserAnswer = function(answerButtonEl) {
+var checkAnswer = function(event) {
+    // log the click event
     console.log("clicked");
-
-    var blah = document.getElementById(answerCounter)
+    // log which button element was clicked
+    console.log(event.target);
 
     // check if answer is right or wrong
     // if right
-    if (answerButtonEl.innerText === questionList[questionNumber].answer) {
+    if (event.target.innerText === questionList[questionNumber].answer) {
         // tell user their answer was correct
         console.log("correct");
 
@@ -126,18 +122,23 @@ var getUserAnswer = function(answerButtonEl) {
 
     };
 
-    // increase question number
-    // questionNumber++;
+    // if question array is complete, run endquiz();
+    if (questionNumber === questionList.length) {
+        endQuiz();
+    
+    // else, run next question 
+    } else {
+        // increase question number
+        questionNumber++;
 
-    // if question array is not complete, run next question 
-        // runQuizQuestions();
-
-    // else, run endquiz();
-        // endQuiz();
+        runQuizQuestions();
+    };
 };
 
 
 var endQuiz = function() {
+    console.log("You have reached the end.");
+
     // stop the countdown
 
     // hide question section
