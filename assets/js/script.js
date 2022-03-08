@@ -15,7 +15,6 @@
 //                                        5. create readme screenshots and gifs
 //                                        6. decide whether to make a new js file or use current for scorescreen
 //                                        7. add scorescreen js
-//                                        8. make questions pause on screen too rather than just feedback
 //
 
 
@@ -181,7 +180,7 @@ var runQuizQuestions = function() {
 };
 
 var checkAnswer = function(event) {
-    // hide the feedback display
+    // hide the feedback display temporarily
     userAnswerOutcomeParentEl.style.display = "none";
 
     // check if answer is right or wrong
@@ -215,18 +214,21 @@ var checkAnswer = function(event) {
         userAnswerOutcomeParentEl.style.display = "none";
     }, 1000);
 
+    // ensure feedback is shown before moving on to next question or highscore screen
+    setTimeout(() => {
+        // if question array is complete, run endquiz();
+        if (questionNumber === (questionList.length - 1)) {
+            endQuiz();
+        
+        // else, run next question 
+        } else {
+            // increase question number
+            questionNumber++;
 
-    // if question array is complete, run endquiz();
-    if (questionNumber === (questionList.length - 1)) {
-        endQuiz();
-    
-    // else, run next question 
-    } else {
-        // increase question number
-        questionNumber++;
-
-        runQuizQuestions();
-    };
+            // loop to next question in the array
+            runQuizQuestions();
+        };
+    }, 1000);
 };
 
 
