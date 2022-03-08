@@ -35,12 +35,17 @@
         <h1>Welcome to the Code Quiz.</h1>
         <p>
           <br>
-          Click the button below to start. 
+          This quiz gives a series of programming-related questions while running a countdown timer. 
           <br><br>
           Once the quiz begins, you will be given a series of questions related to computer programming. 
           Answer carefully, for wrong answers will be penalized by a deduction of 10 seconds off of your
-          timer. When your timer reaches 0, the quiz will end, and you will be scored based on how many 
-          correct answers you were able to give.
+          timer. 
+          <br><br>
+          When your timer reaches 0, or if you answer all of the questions avaialble, the quiz will end. 
+          You will be scored based on how many correct answers you were able to give, multiplied by the 
+          amount of time you had left on the clock.
+          <br><br>
+          Click the button below to start. 
         </p>
 
         <button id="start" class="btn btn-info" type="button">Start Quiz</button>
@@ -55,13 +60,15 @@
         <div id="question-choices" class="choices"></div>
       </div>
 
-      <div id="answer-outcome" class="feedback"></div>
+      <div id="answer-feedback" class="feedback">
+        <h3 id="answer-outcome"></h3>
+      </div>
     </div>
     <!--End Question Section-->
 
     <!--High Score Section-->
     <div class="container">
-      <div id="score=input" style="display: none" class="row">
+      <div id="score-input" style="display: none" class="row">
         <h2>You have completed the Code Quiz!</h2>
         <p>
           Your final score is: <span id="user-final-score"></span>.

@@ -11,14 +11,21 @@
 
 // 1. DEFINING VARIABLES------------------------------------------------------------------------------------------------ //
 // query selector to find HTML elements on the page
-var startBtn = document.querySelector("#start");
-var questionPromptEl = document.querySelector("#question-prompt");
-var introEl = document.querySelector("#intro");
-var questionChoicesEl = document.querySelector("#question-choices");
+var timerEl = document.getElementById("countdown");
+var introEl = document.getElementById("intro");
+var startBtn = document.getElementById("start");
+var questionParentEl = document.getElementById("questions")
+var questionPromptEl = document.getElementById("question-prompt");
+var questionChoicesEl = document.getElementById("question-choices");
+var userAnswerOutcomeParentEl = document.getElementById("answer-feedback");
+var userAnswerOutcomeEl = document.getElementById("answer-outcome");
+var highscoreParentEl = document.getElementById("score-input");
 
 // Counter variables
 var questionNumber = 0;
 var numberCorrect = 0;
+var time = 100;
+var timer;
 
 // timer related variables
 
@@ -50,22 +57,26 @@ var startQuiz = function() {
     // hide the intro
     introEl.style.display = "none";
 
-    // // begin timing functions
-    // timer();
+    // display the countdown timer
+    timerEl.textContent = time;
+
+    // start the countdown timer
+    timer = setInterval(clock, 1000);
 
     // begin displaying the questions
     runQuizQuestions();
 };
 
-var timer = function() {
-    // display the countdown timer
-
-    // start the countdown timer
-
+var clock = function() {
     // countdown time 
+    time--;
+    // display updated countdown timer
+    timerEl.textContent = time;
 
     // condition to end quiz if user runs out of time
-    // how do i constantly check this condition??????????????????????
+    if (time <= 0) {
+        endQuiz();
+    };
 };
 
 var runQuizQuestions = function() {
@@ -102,11 +113,15 @@ var checkAnswer = function(event) {
     // log which button element was clicked
     console.log(event.target);
 
+    // hide the feedback display
+    userAnswerOutcomeParentEl.style.display = "none";
+
     // check if answer is right or wrong
     // if right
     if (event.target.innerText === questionList[questionNumber].answer) {
         // tell user their answer was correct
         console.log("correct");
+        userAnswerOutcomeEl.textContent = "Correct!";
 
         // reward points for correct answer
         numberCorrect += 1;
@@ -115,15 +130,24 @@ var checkAnswer = function(event) {
     } else {
         // tell user their answer was wrong
         console.log("incorrect");
+        userAnswerOutcomeEl.textContent = "Incorrect!";
         
         // subtract time from timer
-    
-        // display updated time
+        time -= 10;
+        // redisplay the updated countdown timer
+        timerEl.textContent = time;
 
     };
 
+    // allow feedback to be shown for a short interval
+    userAnswerOutcomeParentEl.style.display = "";
+    setTimeout(function() {
+        userAnswerOutcomeParentEl.style.display = "none";
+    }, 1000);
+
+
     // if question array is complete, run endquiz();
-    if (questionNumber === questionList.length) {
+    if (questionNumber === (questionList.length - 1)) {
         endQuiz();
     
     // else, run next question 
@@ -140,18 +164,18 @@ var endQuiz = function() {
     console.log("You have reached the end.");
 
     // stop the countdown
+    clearInterval(timer);
 
-    // hide question section
+    // allow the user to get feedback before the question section disappears
+    setTimeout(function() {
+        questionParentEl.style.display = "none";
+        userAnswerOutcomeParentEl.style.display = "none";
+    }, 1000);
 
     // display final score
 
     // display high score page
-};
-
-// function to run all the quiz functions
-var quizHandler = function() {
-    startQuiz();
-    // endQuiz();
+    
 };
 // -----------------------------------------------------------------------------------------------------END QUIZ SECTION //
 
@@ -180,7 +204,7 @@ var highScoreHandler = function() {
 
 // ?. CLICK EVENT LISTENERS--------------------------------------------------------------------------------------------- //
 // once user clicks start quiz button, start the quiz
-startBtn.addEventListener("click", quizHandler);
+startBtn.addEventListener("click", startQuiz);
 
 // once the user clicks the save score button, save their highscore
 
