@@ -1,9 +1,9 @@
 // --------------------------------------------------------------------------------------------------------------------- //
 // TABLE OF CONTENTS: -------------------------------------------------------------------------------------------------- //
 // ------------------------------------------------------------------------------------------------1. DEFINING VARIABLES //
-// ------------------------------------------------------------------------------------------------------?. RUN THE QUIZ //
-// ------------------------------------------------------------------------------------------------?. SAVE THE HIGHSCORE //
-// ---------------------------------------------------------------------------------------------?. CLICK EVENT LISTENERS //
+// ------------------------------------------------------------------------------------------------------2. RUN THE QUIZ //
+// ------------------------------------------------------------------------------------------------3. SAVE THE HIGHSCORE //
+// ---------------------------------------------------------------------------------------------4. CLICK EVENT LISTENERS //
 // --------------------------------------------------------------------------------------------------------------------- //
 
 
@@ -20,14 +20,17 @@ var questionChoicesEl = document.getElementById("question-choices");
 var userAnswerOutcomeParentEl = document.getElementById("answer-feedback");
 var userAnswerOutcomeEl = document.getElementById("answer-outcome");
 var highscoreParentEl = document.getElementById("score-input");
+var userFinalScoreEl = document.getElementById("user-final-score");
+var userInitialsEl = document.getElementById("initals");
+var highScoreBtn = document.getElementById("submit-score");
 
 // Counter variables
 var questionNumber = 0;
 var numberCorrect = 0;
-var time = 100;
-var timer;
 
 // timer related variables
+var time = 100;
+var timer;
 
 // question array
 questionList = [
@@ -52,7 +55,7 @@ questionList = [
 
 
 
-// ?. RUN THE QUIZ------------------------------------------------------------------------------------------------------ //
+// 2. RUN THE QUIZ------------------------------------------------------------------------------------------------------ //
 var startQuiz = function() {
     // hide the intro
     introEl.style.display = "none";
@@ -108,11 +111,6 @@ var runQuizQuestions = function() {
 };
 
 var checkAnswer = function(event) {
-    // log the click event
-    console.log("clicked");
-    // log which button element was clicked
-    console.log(event.target);
-
     // hide the feedback display
     userAnswerOutcomeParentEl.style.display = "none";
 
@@ -122,6 +120,7 @@ var checkAnswer = function(event) {
         // tell user their answer was correct
         console.log("correct");
         userAnswerOutcomeEl.textContent = "Correct!";
+        userAnswerOutcomeEl.setAttribute("class", "");
 
         // reward points for correct answer
         numberCorrect += 1;
@@ -131,6 +130,7 @@ var checkAnswer = function(event) {
         // tell user their answer was wrong
         console.log("incorrect");
         userAnswerOutcomeEl.textContent = "Incorrect!";
+        userAnswerOutcomeEl.setAttribute("class", "");
         
         // subtract time from timer
         time -= 10;
@@ -168,44 +168,59 @@ var endQuiz = function() {
 
     // allow the user to get feedback before the question section disappears
     setTimeout(function() {
+        // hide question section
         questionParentEl.style.display = "none";
         userAnswerOutcomeParentEl.style.display = "none";
+
+        // display final score section
+        highscoreParentEl.style.display = "";
+
+        // display final score
+        userFinalScoreEl.textContent = numberCorrect * time;
     }, 1000);
 
-    // display final score
-
     // display high score page
-    
+
 };
 // -----------------------------------------------------------------------------------------------------END QUIZ SECTION //
 
 
 
 
-// ?. SAVE THE HIGHSCORE------------------------------------------------------------------------------------------------ //
-// function to run all the highscore functions
-var highScoreHandler = function() {
+// 3. SAVE THE HIGHSCORE------------------------------------------------------------------------------------------------ //
+// function to save highscore
+var saveScore = function() {
     // get user initials from text box
+    var initials = userInitialsEl.value.trim();
 
     // check to see if the value is empty
+    if (initials !== "") {
+        // retrieve scores from local storage
+        var allHighScores = JSON.parse(window.localStorage.getItem("allHighScores")) || [];
 
-    // retrieve scores from local storage
+        // create object for current user's score
+        var userHighScore = {
+            score: userFinalScoreEl.textContent, 
+            initials: initials
+        };
 
-    // create score object for current user
+        // save new object with user's score to localstorage
+        allHighScores.push(userHighScore);
+        window.localStorage.setItem("allHighScores", JSON.stringify(allHighScores));
 
-    // save to localstorage
-
-    // direct user to high score page
+        // link to high score html page
+        window.location.href = "scorescreen.html";
+    };
 };
 // ------------------------------------------------------------------------------------------------END HIGHSCORE SECTION //
 
 
 
 
-// ?. CLICK EVENT LISTENERS--------------------------------------------------------------------------------------------- //
+// 4. CLICK EVENT LISTENERS--------------------------------------------------------------------------------------------- //
 // once user clicks start quiz button, start the quiz
 startBtn.addEventListener("click", startQuiz);
 
 // once the user clicks the save score button, save their highscore
-
+highScoreBtn.addEventListener("click", saveScore);
 // -------------------------------------------------------------------------------------END CLICK EVENT LISTENER SECTION //
