@@ -11,8 +11,7 @@
 //                                        1. use bootstrap to customize style for both hmtl pages
 //                                        2. test js to make sure score saving works properly
 //                                        3. create readme screenshots and gifs
-//                                        4. decide whether to make a new js file or use current for scorescreen
-//                                        5. add scorescreen js
+//                                        4. add scorescreen js
 //
 
 
@@ -262,12 +261,12 @@ var saveScore = function() {
 
     // check to see if the value is empty
     if (initials !== "") {
-        // retrieve scores from local storage
+        // retrieve scores from local storage, accounting for no scores in localstorage
         var allHighScores = JSON.parse(window.localStorage.getItem("allHighScores")) || [];
 
         // create object for current user's score
         var userHighScore = {
-            score: userFinalScoreEl.textContent, 
+            score: (numberCorrect * time), 
             initials: initials
         };
 
