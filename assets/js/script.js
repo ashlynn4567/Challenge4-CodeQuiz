@@ -12,6 +12,7 @@
 //                                        2. test js to make sure score saving works properly
 //                                        3. create readme screenshots and gifs
 //                                        4. add scorescreen js
+//                                        5. allows a negative time??
 //
 
 
@@ -44,77 +45,77 @@ questionList = [
         question: "In which HTML element do we put our JavaScript code?",
         choices: ["<html></html>", "<body></body>", "<script></script>", "<meta></meta>"],
         answer: "<script></script>"
-    },
-    {
-        question: "Which of the choices below is the correct syntax for a function declaration?",
-        choices: ["function myFunction() {};", "function = myFunction() {};", "function:myFunction();", "var myFunction = function() {};"],
-        answer: "function myFunction() {};"
-    },
-    {
-        question: "Which of the choices below is the correct syntax for a function expression?",
-        choices: ["function myFunction() {};", "function = myFunction() {};", "function:myFunction();", "var myFunction = function() {};"],
-        answer: "var myFunction = function() {};"
-    },
-    {
-        question: "Which of the choices below is the correct syntax for a conditional statement?",
-        choices: ["if i == 5 then", "for (i = 0; i < 5, i++) {};", "while n <3 {};"],
-        answer: "for (i = 0; i < 5, i++) {};"
-    },
-    {
-        question: "What operator does this represent? ||",
-        choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
-        answer: "OR"
-    }, 
-    {
-        question: "Which of the following notations would represent a comment in JavaScript?",
-        choices: ["<!--This is a comment-->", "// This is a comment", "#This is a comment"],
-        answer: "// This is a comment"
-    }, 
-    {
-        question: "What is the correct way to write an array?",
-        choices: ['var colors = "red", "green", "blue"', 'var colors = (1: "red", 2: "green", 3: "blue")', 'var colors = ["red", "green", "blue"]', 'var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")'],
-        answer: 'var colors = ["red", "green", "blue"]'
-    }, 
-    {
-        question: "True or False: JavaScript is the same as Java.",
-        choices: ["True", "False"],
-        answer: "False"
-    }, 
-    {
-        question: "Which event occurs when the user clicks on an HTML element?",
-        choices: ["onmouseclick", "onclick", "onchange", "onmouseover"],
-        answer: "onclick"
-    }, 
-    {
-        question: "How do you declare a variable?",
-        choices: ["v carName;", "var carName;", "variable carName;"],
-        answer: "var carName;"
-    }, 
-    {
-        question: "Which operator is used to assign a value to a variable?",
-        choices: ["==", "===", "="],
-        answer: "="
-    }, 
-    {
-        question: "What will the following code return: Boolean(10 > 9);",
-        choices: ["NaN", "null", "True", "False"],
-        answer: "True"
-    }, 
-    {
-        question: "Is JavaScript case-sensitive?",
-        choices: ["Yes", "No"],
-        answer: "Yes"
-    }, 
-    {
-        question: "What is the correct file extension for JavaScript",
-        choices: [".js", ".javascript", ".java"],
-        answer: ".js"
-    }, 
-    {
-        question: "A function associated with an object is called a:",
-        choices: ["Callback Function", "Link", "Method"],
-        answer: "Method"
     }
+    // COMMA {
+    //     question: "Which of the choices below is the correct syntax for a function declaration?",
+    //     choices: ["function myFunction() {};", "function = myFunction() {};", "function:myFunction();", "var myFunction = function() {};"],
+    //     answer: "function myFunction() {};"
+    // },
+    // {
+    //     question: "Which of the choices below is the correct syntax for a function expression?",
+    //     choices: ["function myFunction() {};", "function = myFunction() {};", "function:myFunction();", "var myFunction = function() {};"],
+    //     answer: "var myFunction = function() {};"
+    // },
+    // {
+    //     question: "Which of the choices below is the correct syntax for a conditional statement?",
+    //     choices: ["if i == 5 then", "for (i = 0; i < 5, i++) {};", "while n <3 {};"],
+    //     answer: "for (i = 0; i < 5, i++) {};"
+    // },
+    // {
+    //     question: "What operator does this represent? ||",
+    //     choices: ["OR", "AND", "NOT EQUAL", "TERNARY"],
+    //     answer: "OR"
+    // }, 
+    // {
+    //     question: "Which of the following notations would represent a comment in JavaScript?",
+    //     choices: ["<!--This is a comment-->", "// This is a comment", "#This is a comment"],
+    //     answer: "// This is a comment"
+    // }, 
+    // {
+    //     question: "What is the correct way to write an array?",
+    //     choices: ['var colors = "red", "green", "blue"', 'var colors = (1: "red", 2: "green", 3: "blue")', 'var colors = ["red", "green", "blue"]', 'var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")'],
+    //     answer: 'var colors = ["red", "green", "blue"]'
+    // }, 
+    // {
+    //     question: "True or False: JavaScript is the same as Java.",
+    //     choices: ["True", "False"],
+    //     answer: "False"
+    // }, 
+    // {
+    //     question: "Which event occurs when the user clicks on an HTML element?",
+    //     choices: ["onmouseclick", "onclick", "onchange", "onmouseover"],
+    //     answer: "onclick"
+    // }, 
+    // {
+    //     question: "How do you declare a variable?",
+    //     choices: ["v carName;", "var carName;", "variable carName;"],
+    //     answer: "var carName;"
+    // }, 
+    // {
+    //     question: "Which operator is used to assign a value to a variable?",
+    //     choices: ["==", "===", "="],
+    //     answer: "="
+    // }, 
+    // {
+    //     question: "What will the following code return: Boolean(10 > 9);",
+    //     choices: ["NaN", "null", "True", "False"],
+    //     answer: "True"
+    // }, 
+    // {
+    //     question: "Is JavaScript case-sensitive?",
+    //     choices: ["Yes", "No"],
+    //     answer: "Yes"
+    // }, 
+    // {
+    //     question: "What is the correct file extension for JavaScript",
+    //     choices: [".js", ".javascript", ".java"],
+    //     answer: ".js"
+    // }, 
+    // {
+    //     question: "A function associated with an object is called a:",
+    //     choices: ["Callback Function", "Link", "Method"],
+    //     answer: "Method"
+    // }
 ];
 // END VARIABLE SECTION------------------------------------------------------------------------------------------------- //
 
@@ -164,7 +165,7 @@ var runQuizQuestions = function() {
         var answerButtonEl = document.createElement("button");
         
         // give button styling class
-        answerButtonEl.setAttribute("class", "answer btn btn-block col-4 btn-outline-info");
+        answerButtonEl.setAttribute("class", "answer w-75 btn btn-block btn-outline-info");
         
         // set list item element content
         answerButtonEl.innerText = questionList[questionNumber].choices[i];

@@ -1,0 +1,5 @@
+/* fix link decoration */
+.link-style {
+    text-decoration: none;
+    color: rgb(52, 212, 237);
+};

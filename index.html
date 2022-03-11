@@ -13,27 +13,31 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
+  <body class="">
     <!--Navbar-->
     <header>
-      <nav>
-        <ul>
-          <a href="scorescreen.html" class="noDecoration"
-            ><li id="scores" class="nav">View High Scores</li></a
-          >
-          <li id="timer" class="nav">
-            Time: &nbsp;<span id="countdown"></span>
-          </li>
+      <nav class="container-fluid">
+        <ul class="row justify-content-between">
+          <div class="col-4">
+            <a href="scorescreen.html" class="link-style"
+              ><li id="scores" class="list-unstyled">View High Scores</li></a
+            >
+          </div>
+          <div class="col-4">
+            <li id="timer" class="list-unstyled">
+              Time: &nbsp;<span id="countdown"></span>
+            </li>
+          </div>  
         </ul>
       </nav>
     </header>
     <!--End Navbar-->
 
     <!--Intro Section-->
-    <div class="container">
-      <div id="intro" class="row">
-        <h1>Welcome to the Code Quiz.</h1>
-        <p>
+    <div class="container flex justify-content-center text-center w-75">
+      <div id="intro" class="">
+        <h1 class="">Welcome to the Code Quiz.</h1>
+        <p class="">
           <br>
           This quiz gives a series of programming-related questions while running a countdown timer. 
           <br><br>
@@ -54,28 +58,29 @@
     <!--End Intro Section-->
 
     <!--Question Section-->
-    <div class="container"></div>
-      <div id="questions" class="row">
-        <h2 id="question-prompt"></h2>
-        <div id="question-choices" class="choices"></div>
+    <div class="container flex"></div>
+      <div id="questions" class="justify-content-center text-center">
+        <h2 id="question-prompt" class=""></h2>
+        <div id="question-choices" class="choices justify-content-center text-center"></div>
       </div>
 
-      <div id="answer-feedback" class="feedback">
+      <div id="answer-feedback" class="feedback justify-content-center text-center">
         <h3 id="answer-outcome"></h3>
       </div>
     </div>
     <!--End Question Section-->
 
     <!--High Score Section-->
-    <div class="container">
-      <div id="score-input" style="display: none" class="row">
+    <div class="container flex">
+      <div id="score-input" style="display: none" class="justify-content-center text-center">
         <h2>You have completed the Code Quiz!</h2>
         <p>
           Your final score is: <span id="user-final-score"></span>.
           <br />
           Please enter your initials:
-          <input id="initials" type="text" name="initials" />
-          <br />
+          <br>
+          <input id="initials" type="text" name="initials" class="text-center"/>
+          <br /><br />
           <button id="submit-score" class="btn btn-info">Submit</button>
         </p>
       </div>
