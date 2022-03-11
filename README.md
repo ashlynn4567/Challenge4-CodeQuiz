@@ -17,15 +17,11 @@ This is how the main page appears to users. The page is responsive, adapting to 
 <img src="">
 </p>
 
-[lorem ipsum]
+To begin the quiz, the user clicks on the "start" button. This dynamically hides the introduction section, while simultaneoulsy creates the question h2 elements and answer buttons. When the user selects an answer, they are given feedback in real time that tells them if they answered correctly or incorrectly. 
 
 <p align="center"><img src=""/></p>
 
-[lorem ipsum]
-
-<p align="center"><img src=""/></p>
-
-[lorem ipsum]
+Once the user has completed the quiz, they are presented with their score. They have the option to save their score. If they choose to save their score, their initials and score are saved to local storage. This feature persists even when the user refreshes the page. If the user wishes to clear the high scores at any time, they are able to click the "clear highscores" button, which clears the local storage highscore data. 
 
 <p align="center"><img src=""/></p>
 
