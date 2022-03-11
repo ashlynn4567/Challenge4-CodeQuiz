@@ -37,6 +37,7 @@ This is how the main page appears to users. The page is responsive, adapting to 
 
 In the future, I would like to add the following improvements:
 
+- Clean up the appearance of the page with styling.
 - Add a page that displays what the user answered vs the correct answers for each question. 
 - Add a functionality that allows users to add their own questions. 
 - Add a functionality that randomizes the question order.
