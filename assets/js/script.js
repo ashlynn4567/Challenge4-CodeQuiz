@@ -8,10 +8,8 @@
 
 // TO DO ==============================>
 //
-//                                        1. use bootstrap to customize style for both hmtl pages
 //                                        2. test js to make sure score saving works properly
 //                                        3. create readme screenshots and gifs
-//                                        4. add scorescreen js
 //                                        5. allows a negative time??
 //
 
@@ -185,7 +183,6 @@ var checkAnswer = function(event) {
     // if right
     if (event.target.innerText === questionList[questionNumber].answer) {
         // tell user their answer was correct
-        console.log("correct");
         userAnswerOutcomeEl.textContent = "Correct!";
         userAnswerOutcomeEl.setAttribute("class", "");
 
@@ -195,7 +192,6 @@ var checkAnswer = function(event) {
     // if wrong
     } else {
         // tell user their answer was wrong
-        console.log("incorrect");
         userAnswerOutcomeEl.textContent = "Incorrect!";
         userAnswerOutcomeEl.setAttribute("class", "");
         
@@ -231,8 +227,6 @@ var checkAnswer = function(event) {
 
 
 var endQuiz = function() {
-    console.log("You have reached the end.");
-
     // stop the countdown
     clearInterval(timer);
 
