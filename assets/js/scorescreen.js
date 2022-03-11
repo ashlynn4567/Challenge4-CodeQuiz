@@ -25,18 +25,13 @@ var getAllHighScores = function() {
     allHighScores.sort(function(x, y) {
         return y.score - x.score;
     });
-};
-
-
-// high score handler
-var highScoreHandler = function() {
-    getAllHighScores();
 
     // function to show the highscores pulled from localstorage
     allHighScores.forEach(function(score) {
         // create list item for each high score
         var scoreItem = document.createElement("li");
         scoreItem.textContent = score.initials + ": " + score.score;
+        scoreItem.setAttribute("class", "");
 
         // append to parent to display on the page
         var scoreList = document.getElementById("highscore-list");
@@ -57,7 +52,7 @@ var clearHighScores = function() {
 
 // 3. CLICK EVENT LISTENER AND FIRST FUNCTION CALL---------------------------------------------------------------------- //
 // call highScoreHandler to show list of high scores
-highScoreHandler();
+getAllHighScores();
 
 // clear scores when user clicks clear scores
 clearBtn.addEventListener("click", clearHighScores);
