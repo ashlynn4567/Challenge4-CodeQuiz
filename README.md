@@ -13,8 +13,10 @@ The greatest challenge I faced in this project was in using the localStorage Web
 This is how the main page appears to users. The page is responsive, adapting to multiple screen sizes.
 
 <p align="center">
-<img src=""/>
-<img src="">
+<img src="./assets/images/code-quiz-desktop-1.png"/>
+<img src="./assets/images/code-quiz-desktop-2.PNG">
+<img src="./assets/images/code-quiz-mobile-1.png">
+<img src="./assets/images/code-quiz-mobile-2.png">
 </p>
 
 To begin the quiz, the user clicks on the "start" button. This dynamically hides the introduction section, while simultaneoulsy creates the question h2 elements and answer buttons. When the user selects an answer, they are given feedback in real time that tells them if they answered correctly or incorrectly. 

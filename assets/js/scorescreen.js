@@ -31,7 +31,6 @@ var getAllHighScores = function() {
         // create list item for each high score
         var scoreItem = document.createElement("li");
         scoreItem.textContent = score.initials + ": " + score.score;
-        scoreItem.setAttribute("class", "");
 
         // append to parent to display on the page
         var scoreList = document.getElementById("highscore-list");
