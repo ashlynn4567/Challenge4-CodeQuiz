@@ -29,7 +29,7 @@ var questionNumber = 0;
 var numberCorrect = 0;
 
 // timer related variables
-var time = 100;
+var time = 200;
 var timer;
 
 // question array
