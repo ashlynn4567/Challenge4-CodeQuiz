@@ -7,7 +7,6 @@
 - [Description](#description)
 - [Deployed Site](#deployed-site)
 - [Features](#features)
-
 - [Technologies](#technologies)
 - [Future Development](#future-development)
 - [Credits](#credits)
@@ -18,7 +17,7 @@ This application was created as a resource to students studying computer program
 
 ## Deployed Site
 
-Follow [this link](https://ashlynn4567.github.io/Code-Quiz/) to view and use our site!
+Follow [this link](https://ashlynn4567.github.io/Code-Quiz/) to view and use my site!
 
 ## Features
 
@@ -51,6 +50,7 @@ If the user wishes to clear the high scores at any time, they are able to click 
 - HTML
 - CSS
 - JavaScript
+- [Bootstrap](https://getbootstrap.com/)
 
 ## Future Development
 
@@ -61,7 +61,7 @@ In the future, I would like to add the following improvements:
 - Add a functionality that allows users to add their own questions.
 - Add a functionality that randomizes the question order.
 
-I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
+I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach me at the links below.
 
 - <a href="mailto:ashlynn4567@gmail.com">Email</a>
 - <a href="https://github.com/ashlynn4567">GitHub</a>
